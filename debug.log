@@ -1,2 +1,0 @@
-[1005/160812.772:ERROR:process_reader_win.cc(123)] NtOpenThread: {Acesso Negado} Um processo solicitou acesso a um objeto, mas o direito de acesso não lhe foi concedido. (0xc0000022)
-[1005/160812.876:ERROR:exception_snapshot_win.cc(88)] thread ID 6296 not found in process

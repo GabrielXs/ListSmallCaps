@@ -77,6 +77,7 @@ out = File.new("SmallCaps.csv", "a")
 out.close
 
 puts "fim do processp"
-sleep()
+
+navegador.quit
 
 

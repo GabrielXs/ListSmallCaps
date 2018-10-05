@@ -52,9 +52,31 @@ out = File.new("SmallCaps.csv", "a")
 out.close
 
 
-
 #body
+cont = 0
+data = ''
+for i in 0...body.size
+	for ii in 0...header.size 
+		if ii < (header.length - 1)
+			data.concat(body[cont].to_s + ";")
+		else
+			data.concat(body[cont].to_s + ";\n")
+		end
+		if cont >= body.size
+			break
+		end
+		cont+=1
+	end
+	if cont >= body.size
+		break
+	end
+end
 
+out = File.new("SmallCaps.csv", "a")
+	out.puts  data
+out.close
+
+puts "fim do processp"
 sleep()
 
 

@@ -37,11 +37,11 @@ end
 
 head = '' 
 
-for i in 0...header.length
-	if i < (header.length - 1)
-		head.concat(header[i].to_s + ";")
+header.each_with_index do |val, idx|
+	if idx < (header.length - 1)
+		head.concat(val.to_s + ";")
 	else
-		head.concat(header[i].to_s + ";\n")
+		head.concat(val.to_s + ";\n")
 	end
 
 end

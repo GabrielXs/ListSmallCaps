@@ -10,13 +10,22 @@ dados = ["ABC Brasil", "ABCB4", "14,45", "14,3", "14,67", "0,87", "+6,41%",
 
 puts "testeando\n quebra de linha"
 texto = '' 
-for i in 0...header.length
-	if i < (header.length - 1)
-		texto.concat(header[i].to_s + ";")
-	else
-		texto.concat(header[i].to_s + ";\n")
-	end
+cont = 0
+c=0
+for i in 0...dados.size
 
+	for ii in 0...header.size
+		if ii < (header.length - 1)
+			texto.concat(dados[c].to_s + ";")
+		else
+			texto.concat(dados[c].to_s + ";\n")
+		end
+		c+=1
+		c = cont
+	end
+	cont+=1
 end
 
-p texto
+puts texto
+p cont
+p c

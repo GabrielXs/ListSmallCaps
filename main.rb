@@ -1,3 +1,7 @@
+#!~ .main.rb
+# Autor: Gabriel Xavier
+#Criação da lista SmallCaps .csv
+
 require "./smallcaps/small_caps.rb"
 require 'Selenium-webdriver' 
 
@@ -17,7 +21,7 @@ browser.find_elements(:xpath,'//*[@id="id_sl-dax"]/thead/tr/th').each do |r|
 	s.setHeader(r.text)
 end	
 
-s.headerConcat
+s.createArq(s.headerConcat)
 
 puts "Pegando os dados da tabela"
 
@@ -25,6 +29,9 @@ browser.find_elements(:xpath,'//*[@id="id_sl-dax"]/tbody/tr/td').each do |r|
 	s.setData(r.text)
 end	
 
-s.dataConcat
+s.createArq(s.dataConcat)
 
+puts "fim do processo."
+
+browser.quit
 

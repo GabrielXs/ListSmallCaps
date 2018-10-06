@@ -1,3 +1,5 @@
+#!~ ./smallcaps/small_caps.rb
+
 class SmallCaps 
 	attr_accessor :header, :data
 	def initialize()
@@ -21,6 +23,7 @@ class SmallCaps
 				head.concat(val.to_s + ";\n")
 			end
 		end
+		head
 	end
 
 	def setData(data)
@@ -50,10 +53,14 @@ class SmallCaps
 				break
 			end
 		end
-		
+		data
 	end
 
-
+	def createArq(args)
+		out = File.new("SmallCaps.csv", "a")
+			out.puts args.encode("UTF-8")
+		out.close
+	end
 
 
 

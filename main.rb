@@ -17,7 +17,7 @@ browser.find_elements(:xpath,'//*[@id="id_sl-dax"]/thead/tr/th').each do |r|
 	s.setHeader(r.text)
 end	
 
-#aqui entrar dados
+s.headerConcat
 
 puts "Pegando os dados da tabela"
 
@@ -25,5 +25,6 @@ browser.find_elements(:xpath,'//*[@id="id_sl-dax"]/tbody/tr/td').each do |r|
 	s.setData(r.text)
 end	
 
+s.dataConcat
 
-puts s.getData
+

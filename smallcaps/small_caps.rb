@@ -1,4 +1,4 @@
-#!~ ./smallcaps/small_caps.rb
+
 
 class SmallCaps 
 	attr_accessor :header, :data
@@ -56,9 +56,13 @@ class SmallCaps
 		data
 	end
 
-	def createArq(args)
+	def createArq(args,ignore)
+		if File.exist?( "SmallCaps.csv" ) and ignore != true
+			File.delete("SmallCaps.csv")
+		end
+
 		out = File.new("SmallCaps.csv", "a")
-			out.puts args.encode("UTF-8")
+			out.puts args.encode('UTF-8')
 		out.close
 	end
 

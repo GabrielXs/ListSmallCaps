@@ -1,4 +1,4 @@
-#!~ .main.rb
+
 # Autor: Gabriel Xavier
 #Criação da lista SmallCaps .csv
 
@@ -21,7 +21,7 @@ browser.find_elements(:xpath,'//*[@id="id_sl-dax"]/thead/tr/th').each do |r|
 	s.setHeader(r.text)
 end	
 
-s.createArq(s.headerConcat)
+s.createArq(s.headerConcat,false)
 
 puts "Pegando os dados da tabela"
 
@@ -29,7 +29,7 @@ browser.find_elements(:xpath,'//*[@id="id_sl-dax"]/tbody/tr/td').each do |r|
 	s.setData(r.text)
 end	
 
-s.createArq(s.dataConcat)
+s.createArq(s.dataConcat,true)
 
 puts "fim do processo."
 

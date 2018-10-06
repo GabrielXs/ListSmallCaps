@@ -3,6 +3,7 @@
 #
 # 	Gabriel Xavier
 
+
 require 'Selenium-webdriver'
 
 Selenium::WebDriver::Chrome.driver_path = "./bin/chromedriver.exe"
@@ -48,7 +49,7 @@ end
 
 
 out = File.new("SmallCaps.csv", "a")
-	out.puts  head
+	out.puts  head.encode("UTF-8")
 out.close
 
 
@@ -73,10 +74,10 @@ for i in 0...body.size
 end
 
 out = File.new("SmallCaps.csv", "a")
-	out.puts  data
+	out.puts  data.encode("UTF-8")
 out.close
 
-puts "fim do processp"
+puts "fim do processo"
 
 navegador.quit
 
